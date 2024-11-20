@@ -10,6 +10,12 @@ app = FastAPI()
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 newsapi_key = os.environ.get("NEWSAPI_KEY")
 
+import os
+
+# Отладочный вывод для проверки переменной окружения
+print(f"OPENAI_API_KEY: {os.environ.get('OPENAI_API_KEY')}")
+
+
 if not openai.api_key:
     raise ValueError("Переменная окружения OPENAI_API_KEY не установлена")
 if not newsapi_key:
